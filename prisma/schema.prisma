@@ -1,0 +1,14 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model student {
+  id        Int    @id @default(autoincrement())
+  firstName String
+  lastName  String
+  password  String
+  active    Int
+  CreatedAt Float
+  UpdatedAt Float
+}

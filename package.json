@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "env-cmd": "^10.1.0",
+    "prisma": "^5.7.1"
+  },
+  "scripts": {
+    "migrate": "env-cmd -f .env-cmdrc -e default,dev npx prisma migrate dev",
+    "migrate-create-only": "env-cmd -f .env-cmdrc -e default,dev npx prisma migrate dev --create-only",
+    "migrate-deploy:uat": "env-cmd -f .env-cmdrc -e default,uat npx prisma migrate deploy",
+    "migrate-resolve:uat": "env-cmd -f .env-cmdrc -e default,uat npx prisma migrate resolve --applied",
+    "migrate-rollback:dev": "env-cmd -f .env-cmdrc -e default,dev npx prisma migrate resolve --rolled-back",
+    "migrate-rollback:uat": "env-cmd -f .env-cmdrc -e default,uat npx prisma migrate resolve --rolled-back"
+  }
+}
